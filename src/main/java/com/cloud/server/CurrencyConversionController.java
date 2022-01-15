@@ -12,7 +12,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class CurrencyConversionController {
 
-	@GetMapping("/currency-conversion/from/{from}/to/{to}/quantity/{quantity}")
+	
+			@GetMapping("/currency-conversion/from/{from}/to/{to}/quantity/{quantity}")
 	public CurrencyConversion calculateCurrencyConversion(@PathVariable String from,
 			@PathVariable String to,
 			@PathVariable BigDecimal quantity
@@ -34,4 +35,5 @@ public class CurrencyConversionController {
 				quantity.multiply(currencyConversion.getConversionMultiple()),
 				currencyConversion.getEnvironment());
 	}
+
 }
